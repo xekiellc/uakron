@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Akron</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #e8a900;
+      --navy: #002664;
+      --cream: #fdf8ee;
+      --dark: #0a0a0a;
+    }
+    body {
+      background-color: var(--dark);
+      color: var(--cream);
+      font-family: 'DM Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 60px,
+        rgba(232,169,0,0.04) 60px,
+        rgba(232,169,0,0.04) 61px
+      );
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.15) 2px,
+        rgba(0,0,0,0.15) 4px
+      );
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem;
+      max-width: 700px;
+      animation: fadeUp 1s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 1s 0.1s ease both;
+    }
+    .images-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 1s 0.2s ease both;
+      flex-wrap: wrap;
+    }
+    .img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-main {
+      width: 220px;
+      filter: drop-shadow(0 0 30px rgba(232,169,0,0.3));
+      transition: filter 0.3s;
+    }
+    .logo-main:hover { filter: drop-shadow(0 0 50px rgba(232,169,0,0.6)); }
+    .logo-seal {
+      width: 130px;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 20px rgba(232,169,0,0.2));
+      transition: filter 0.3s;
+    }
+    .logo-seal:hover { filter: drop-shadow(0 0 40px rgba(232,169,0,0.5)); }
+    .divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      animation: fadeUp 1s 0.3s ease both;
+    }
+    .headline span {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .subline {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(253,248,238,0.4);
+      margin-bottom: 2.5rem;
+      animation: fadeUp 1s 0.4s ease both;
+    }
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 1s 0.45s ease both;
+    }
+    .wink {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: rgba(253,248,238,0.25);
+      animation: fadeUp 1s 0.5s ease both;
+      line-height: 2;
+    }
+    .wink a {
+      color: var(--gold);
+      opacity: 0.6;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .wink a:hover { opacity: 1; }
+    .flash {
+      display: inline-block;
+      animation: flashPulse 3s infinite;
+    }
+    @keyframes flashPulse {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.6; }
+    }
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.1);
+      text-transform: uppercase;
+      z-index: 10;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="tag">universityofakron.com &nbsp;·&nbsp; Est. 2026</p>
+    <div class="images-row">
+      <div class="img-wrap">
+        <img class="logo-main" src="KSU_Block_K.png" alt="Kent State University">
+      </div>
+      <div class="divider"></div>
+      <div class="img-wrap">
+        <img class="logo-seal" src="Kent_State_seal.svg" alt="Kent State Seal">
+      </div>
+    </div>
+    <h1 class="headline">Under <span>New</span><br>Management.</h1>
+    <p class="subline">Something better is coming &nbsp;·&nbsp; Be patient, Zips</p>
+    <div class="gold-rule"></div>
+    <p class="wink">
+      Interested in acquiring this domain?<br>
+      <span class="flash">▸</span> <a href="mailto:zach@xekie.com">Make an offer worth reading.</a>
+    </p>
+  </div>
+  <footer>privately owned &nbsp;·&nbsp; not affiliated with the university of akron</footer>
+</body>
+</html>
